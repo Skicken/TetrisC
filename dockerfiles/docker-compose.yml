@@ -1,0 +1,17 @@
+version: '2'
+services:
+  Builder:
+    image: build-img
+    volumes:
+      - log:/log:rw
+      - out:/out:rw
+
+  Tester:
+    image: test-img
+    volumes:
+      - log:/log:rw
+volumes:
+  log:
+    name: log
+  out:
+    name: out
