@@ -13,13 +13,15 @@ pipeline {
         stage('Test') {    
             steps {
                 echo 'Testing..'
-                sh 'dockerfiles/docker-compose up Tester'
+                sh 'cd dockerfiles'
+                sh 'docker-compose -f dockerfiles/docker-compose.yml up Tester'
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                sh 'dockerfiles/docker-compose up Builder'
+                sh 'cd dockerfiles'
+                sh 'docker-compose -f dockerfiles/docker-compose.yml up Builder'
             }
         }
     }
