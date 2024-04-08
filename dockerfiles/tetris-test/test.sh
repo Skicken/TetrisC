@@ -1,5 +1,5 @@
 #!/bin/bash
-git clone https://github.com/lucadellalib/TetrisC
+git clone https://github.com/Skicken/TetrisC
 timestamp=`date +'%H:%M:%S-%d-%m-%Y'`
 mkdir TetrisC/build
 cd TetrisC/build

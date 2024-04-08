@@ -1,5 +1,5 @@
 #!/bin/bash
-git clone https://github.com/lucadellalib/TetrisC
+git clone https://github.com/Skicken/TetrisC
 mkdir TetrisC/build
 cd TetrisC/build
 cmake ..
