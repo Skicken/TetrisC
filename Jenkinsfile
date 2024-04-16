@@ -38,8 +38,7 @@ pipeline {
             steps
             {
                 sh """
-
-                    docker-compose -f dockerfiles/docker-compose.yml up -d --no-recreate Deploy
+                    docker-compose -f dockerfiles/docker-compose.yml up -d Deploy
                 """
             }
 

@@ -11,5 +11,6 @@ if [[ -v VERSION ]]; then
     echo "Found version to set "$VERSION
     build_version=$VERSION
 fi
+rm /app/* -r
 cp bin/* /app/ -r
 tar -cf /build/build_$build_version bin
