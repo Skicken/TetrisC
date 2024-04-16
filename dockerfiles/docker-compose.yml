@@ -1,17 +1,29 @@
-version: '2'
+version: "3"
 services:
   Builder:
     image: build-img
     volumes:
+      - build:/build:rw
       - log:/log:rw
-      - out:/out:rw
-
+      - app:/app:rw
+    environment:
+      - VERSION=${VERSION}
   Tester:
     image: test-img
     volumes:
       - log:/log:rw
+  Deploy:
+    image: deploy-img
+    container_name: DEPLOY
+    volumes:
+      - app:/app:rw
+    tty: true
+    stdin_open: true
+    
 volumes:
   log:
     name: log
-  out:
-    name: out
+  build:
+    name: build
+  app:
+    name: app

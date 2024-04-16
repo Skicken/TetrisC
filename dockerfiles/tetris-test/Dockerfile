@@ -1,5 +1,6 @@
-from build-img
+from dep-img
 
-ADD test.sh ./test.sh
-RUN chmod u+x test.sh
-ENTRYPOINT [ "bash","test.sh" ] 
+COPY ./entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT [ "/entrypoint.sh" ]
